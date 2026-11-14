@@ -1,10 +1,9 @@
-# 진행 현황 (최종 갱신: 2026-11-14 22:30)
+# 진행 현황 (최종 갱신: 2026-11-14 21:50)
 
-> 저장소 생성 전 임시 위치. Step 1에서 `docs/PROGRESS.md`로 이동한다.
 
 ## Step 상태
 - [x] Step 0 환경·계정 확인, 구 사이트 분석, 개선 제안 (2026-11-14)
-- [ ] Step 1 새 저장소 생성, Jekyll 골격, Pages 활성화
+- [x] Step 1 새 저장소 생성, Jekyll 골격, Pages 활성화 (2026-11-14)
 - [ ] Step 2 디자인 시안(팔레트 2~3안, 랜딩 + 서브 1페이지, 로고 비교)
 - [ ] Step 3a 데이터 스키마 확정 + 논문·발표 이관(DOI 조회 포함)
 - [ ] Step 3b 교수·연구·강의·연락처·소식 이관 + 이미지 최적화
@@ -13,8 +12,8 @@
 - [ ] Step 6 정식 오픈(사용자 승인 후에만)
 
 ## 중단 지점
-- 마지막 작업: 결정 사항 기록, git init + local 설정, gh·Ruby 3.3.12+DevKit·ImageMagick 7.1.2 설치, github-pages 233 + webrick·tzinfo-data·wdm 설치, 테스트 빌드 통과
-- 다음 할 일: 사용자 `gh auth login` → MSE 개인 사진 18개 삭제(목록 제시 완료, 확인 대기) → Step 1
+- 마지막 작업: Step 1 완료(저장소 생성·골격 push·Pages 배포·라이브 경로 확인). MSE 개인 사진 18개 삭제 push(8356d72), 라이브 404 확인
+- 다음 할 일: 사용자 승인 후 Step 2(팔레트 2~3안, 랜딩 + 서브 1페이지 레이아웃, SVG 워드마크 vs 기존 로고 비교)
 
 ## 확정된 결정 사항
 - (2026-11-14) 언어 규칙: 진행 설명·보고·질문·PROGRESS.md·커밋 메시지는 한국어, 명령어·파일명·도구명·기술 용어는 영어 — 사용자 지시
@@ -32,6 +31,10 @@
   7. 로고: Step 2에서 SVG 워드마크 시안과 기존 로고를 나란히 비교
 - (2026-11-14) 영문 연구실명은 확정 전까지 "Environmental Durability Metals Laboratory" 사용
 - (2026-11-14) 데이터 오류 질문과 교수 이름 표기 목록 확인은 Step 3a에서 일괄 진행
+- (2026-11-14) MSE 개인 사진 18개 삭제 완료(MSE `8356d72`). 남은 작업: Step 6에서 MSE 저장소 재생성으로 git 히스토리 정리
+- (2026-11-14) 사이트 구조: 페이지 파일은 `pages/*.md`(permalink 지정), UI 문자열은 `_data/ui/<lang>.yml`, 연구실 기본 정보는 `_data/site.yml`, noindex 스위치는 `_config.yml`의 `noindex` — Step 1 구현
+- (2026-11-14) Pages 빌드 방식: legacy(브랜치 `main` 루트) — 브리프의 Actions 미사용 원칙
+- (2026-11-14) 줄바꿈 LF 통일(`.gitattributes`) — Windows 전역 autocrlf 경고 제거
 
 ## 미결 사항 / 사용자 제공 대기 자료
 - 영문 연구실명 확정("Metals" vs "Metallic material")
@@ -42,3 +45,5 @@
 
 ## 참고
 - 구 사이트 clone(이관 원본): `C:\MyWork\MSE-old`
+- 스크린샷: `tmp/screenshots/`(git 제외). headless Chrome은 최소 창 폭이 약 500px이라, 390px 모바일은 iframe(390px)에 넣어 찍고 잘라낸다(`tmp/frame-*.html` 참고)
+- 이 PC 환경 메모: 사용자 환경변수의 만료된 `GH_TOKEN`을 2026-11-14에 삭제함. gh는 keyring 인증(edm-lab). 저장소마다 credential helper를 `gh auth git-credential`로 설정함
