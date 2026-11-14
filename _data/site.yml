@@ -1,0 +1,6 @@
+# 연구실 기본 정보. 스키마는 Step 3a에서 확정한다.
+name_ko: 환경내구금속연구실
+name_short: EDM Lab
+# TODO: 영문명 확정 대기("Metals" vs "Metallic material"). 확정 전까지 아래 표기 사용.
+name_en: Environmental Durability Metals Laboratory
+affiliation_ko: 한국공학대학교 신소재공학과

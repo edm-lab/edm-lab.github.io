@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: site.lang -%}{%- assign ui = site.data.ui[lang] -%}
+<article class="page container">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if page.placeholder -%}
+  <p class="placeholder">{{ ui.placeholder }}</p>
+  {%- endif -%}
+  {{ content }}
+</article>

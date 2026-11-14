@@ -1,0 +1,22 @@
+{%- assign lang = page.lang | default: site.lang -%}{%- assign ui = site.data.ui[lang] -%}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-short">{{ site.data.site.name_short }}</span>
+      <span class="brand-ko">{{ site.data.site.name_ko }}</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            data-label-open="{{ ui.menu_open }}" data-label-close="{{ ui.menu_close }}">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="visually-hidden">{{ ui.menu_open }}</span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        {%- for item in ui.nav %}
+        {%- assign item_url = item.url | relative_url %}
+        <li><a href="{{ item_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

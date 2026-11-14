@@ -1,0 +1,8 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
+# 로컬 작업 산출물(스크린샷 원본 등)
+tmp/

@@ -1,0 +1,9 @@
+---
+layout: default
+title: 홈
+---
+{%- assign lang = page.lang | default: site.lang -%}{%- assign ui = site.data.ui[lang] -%}
+<section class="container">
+  <h1 class="page-title">{{ site.data.site.name_ko }}<br><small>{{ site.data.site.name_en }}</small></h1>
+  <p class="placeholder">{{ ui.placeholder }}</p>
+</section>
